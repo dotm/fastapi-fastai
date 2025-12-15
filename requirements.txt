@@ -1,0 +1,6 @@
+numpy<2
+fastai==2.8.5
+--find-links https://download.pytorch.org/whl/cpu
+torch==2.9.0
+fastapi[standard]==0.113.0
+pydantic==2.8.0
