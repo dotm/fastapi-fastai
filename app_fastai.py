@@ -19,7 +19,6 @@ def predict(payload: InputText):
     # learner.predict returns (category, tensor, probs)
     pred = learner.predict(payload.text)
     label = str(pred[0])
-    probs = pred[2].tolist()  # probabilities
-    # include classes order
-    classes = learner.dls.vocab[0] if hasattr(learner.dls, "vocab") else learner.dls.vocab
-    return {"label": label, "probs": probs, "classes": classes}
+    tensor = pred[1].tolist()
+    probs = pred[2].tolist() # probabilities
+    return {"label": label, "tensor": tensor, "probs": probs}
